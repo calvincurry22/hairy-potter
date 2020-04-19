@@ -8,7 +8,7 @@ beforeAll(() => {
     piece = makePottery("Mug", 10, 8)
 })
 
-test('Pottery object to be created with correct properties', () => {
+test('Pottery object is created with correct properties', () => {
     expect(
         piece
     )
@@ -22,7 +22,7 @@ describe('Firing the pottery in the kiln that is too hot', () => {
         piece = firePottery(piece, 2200)
     })
 
-    test('Pottery object to be cracked when temperature is above 2200', () => {
+    test('Pottery object is cracked when temperature is above 2200', () => {
         expect( piece.cracked ).toBe( true )
     })
 
@@ -37,7 +37,7 @@ describe('Firing the pottery in the kiln with the correct temperate', () => {
         piece = firePottery(piece, 2100)
     })
 
-    test('Pottery object to be uncracked when temperature is below 2200', () => {
+    test('Pottery object is uncracked when temperature is below 2200', () => {
         expect( piece.cracked ).toBe( false )
     })
 
