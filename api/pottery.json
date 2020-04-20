@@ -1,0 +1,22 @@
+{
+  "pottery": [
+    {
+      "shape": "mug",
+      "weight": 2,
+      "height": 5,
+      "id": 1,
+      "fired": true,
+      "cracked": false,
+      "price": 20
+    },
+    {
+      "shape": "platter",
+      "weight": 1.5,
+      "height": 3,
+      "id": 2,
+      "fired": true,
+      "cracked": false,
+      "price": 20
+    }
+  ]
+}

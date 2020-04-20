@@ -1,9 +1,11 @@
 import { usePottery } from "./PotteryCatalog.js";
+import { useThePottery, getPottery, deletePottery } from "./PotteryProvider.js";
 
 const contentTarget = document.querySelector(".potteryList")
-
+const eventHub = document.querySelector(".container")
 export const PotteryList = () => {
-    const potteryCollection = usePottery()
+        
+    const potteryCollection = useThePottery()
     contentTarget.innerHTML = `
         ${potteryCollection.map(pot => {
             return `
@@ -25,6 +27,15 @@ export const PotteryList = () => {
 
 contentTarget.addEventListener("click", clickEvent => {
     if(clickEvent.target.id.startsWith("sell--")) {
-        alert(`You sold a {shape of pottery} for {price}`)
+        const [prefix, potId] = clickEvent.target.id.split("--")
+        const pottery = useThePottery()
+        const foundPot = pottery.find(pot => pot.id === parseInt(potId))
+        alert(`You sold a ${foundPot.shape} for $${foundPot.price}`)
+        deletePottery(potId)
     }
+})
+
+eventHub.addEventListener("stateChange", CustomEvent => {
+    contentTarget.innerHTML = ""
+    PotteryList()
 })
