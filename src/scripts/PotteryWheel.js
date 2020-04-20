@@ -2,10 +2,10 @@ let potteryId = 1
 
 export const makePottery = (shape, weight, height) => {
     const potteryObject = {
-        potShape: shape,
-        potWeight: weight,
-        potHeight: height,
-        id: potteryId++
+        "shape": shape,
+        "weight": weight,
+        "height": height,
+        "id": potteryId++
     }
     return potteryObject
 }
